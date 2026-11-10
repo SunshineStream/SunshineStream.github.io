@@ -1,0 +1,8 @@
+{
+  "name": "sunshinestream-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

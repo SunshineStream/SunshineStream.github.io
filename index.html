@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f0">
+  <title>Sunshine — Your games. Your hardware. Every screen.</title>
+  <meta name="description" content="Stream your PC games and desktop to Moonlight clients. Sunshine is a free, open-source, self-hosted game streaming host with AMD, Intel, and NVIDIA hardware encoding.">
+  <link rel="canonical" href="https://sunshine.lizardbyte.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sunshine — Your games. Your hardware. Every screen.">
+  <meta property="og:description" content="Your gaming PC has more places to be. Stream with Sunshine and play with Moonlight.">
+  <meta property="og:url" content="https://sunshine.lizardbyte.dev/">
+  <meta property="og:image" content="https://sunshine.lizardbyte.dev/assets/social.jpg">
+  <link rel="icon" type="image/svg+xml" href="./assets/sunshine.svg">
+  <link rel="preload" href="./assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script type="module" src="./assets/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="chip" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4"/><rect x="9" y="9" width="6" height="6" rx="1"/></symbol>
+    <symbol id="controller" viewBox="0 0 24 24"><path d="M7 6h10c3 0 4 3 5 10 1 5-3 5-6 0H8c-3 5-7 5-6 0C3 9 4 6 7 6Z"/><path d="M6 11h4m-2-2v4m8-2h.1m3 2h.1"/></symbol>
+    <symbol id="sliders" viewBox="0 0 24 24"><path d="M4 3v5m0 6v7M12 3v10m0 6v2M20 3v2m0 6v10M1 8h6m2 11h6m2-14h6"/><circle cx="4" cy="11" r="3"/><circle cx="12" cy="16" r="3"/><circle cx="20" cy="8" r="3"/></symbol>
+    <symbol id="desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-2 14h.1"/></symbol>
+    <symbol id="apple" viewBox="0 0 24 24"><path d="M15 2c0 2-1 4-3 4 0-2 1-4 3-4ZM19 14c-1 3-3 7-5 7-1 0-2-1-3-1s-2 1-3 1c-3 0-6-7-6-10 0-4 5-6 9-3 3-3 7-1 8 1-3 1-3 5 0 5Z"/></symbol>
+    <symbol id="windows" viewBox="0 0 24 24"><path d="M2 5 10 4v7H2zm11-1 9-2v9h-9zM2 14h8v7l-8-1zm11 0h9v9l-9-2z"/></symbol>
+    <symbol id="linux" viewBox="0 0 24 24"><path d="M8 9c0-6 1-7 4-7s4 1 4 7c4 3 6 9 3 11-2 2-4 1-7 1s-5 1-7-1c-3-2-1-8 3-11Z"/><path d="m9 11 3 2 3-2m-5-4h.1m3.9 0h.1M4 20l4-3m12 3-4-3"/></symbol>
+    <symbol id="github" viewBox="0 0 24 24"><path d="M9 19c-5 2-5-2-7-2m14 6v-4c0-1 0-2-1-3 4 0 7-2 7-6 0-1 0-3-2-4 0-1 0-3-1-4-2 0-4 2-4 2a15 15 0 0 0-6 0S7 2 5 2c-1 1-1 3-1 4-2 1-2 3-2 4 0 4 3 6 7 6-1 1-1 2-1 3v4"/></symbol>
+  </svg>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Sunshine home"><img src="./assets/sunshine.svg" width="42" height="42" alt=""><span>sunshine<span class="brand-period">.</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#why">Why Sunshine</a><a href="#how-it-works">How it works</a><a href="#clients">Clients</a>
+      <a href="https://docs.lizardbyte.dev/projects/sunshine/latest/">Docs <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></a>
+    </nav>
+    <a class="header-download" href="#download">Get Sunshine <svg aria-hidden="true" class="icon small"><use href="#arrow"/></svg></a>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="sun-dot"></span> YOUR HARDWARE. YOUR RULES.</p>
+        <h1 id="hero-title">Your games.<br>Your PC.<br><span>Every screen.</span></h1>
+        <p class="hero-description">Turn your PC into your own game streaming host. Sunshine does the heavy lifting. Moonlight brings it to the screen in front of you.</p>
+        <div class="hero-actions"><a class="button primary" href="#download">Download Sunshine <svg aria-hidden="true" class="icon"><use href="#arrow"/></svg></a><a class="text-link" href="https://docs.lizardbyte.dev/projects/sunshine/latest/">Read the docs <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></a></div>
+        <p class="hero-footnote"><span class="checkmark" aria-hidden="true">✓</span> Free and open source <span aria-hidden="true">·</span> No cloud subscription</p>
+      </div>
+      <div class="stream-scene" role="img" aria-label="An illustration of a PC streaming the same canyon landscape to a handheld screen">
+        <div class="scene-orbit orbit-one"></div><div class="scene-orbit orbit-two"></div>
+        <span class="scene-coordinate coordinate-top">FROM YOUR DESK</span>
+        <div class="monitor"><div class="monitor-screen"><img src="./assets/landscape.svg" width="1000" height="640" alt=""><span class="screen-mark"><img src="./assets/sunshine.svg" width="18" height="18" alt=""> Sunshine host</span></div><div class="monitor-neck"></div><div class="monitor-foot"></div></div>
+        <div class="connection-tag"><span class="connection-dot"></span> Your PC is the powerhouse.</div>
+        <div class="handheld"><div class="handheld-left"><span class="joystick"></span><span class="dpad"></span></div><img class="handheld-screen" src="./assets/landscape.svg" width="1000" height="640" alt=""><div class="handheld-right"><span class="device-buttons">●<br>● ●<br>●</span><span class="joystick"></span></div></div>
+        <span class="scene-coordinate coordinate-bottom">TO YOUR FAVORITE PLACE TO PLAY <svg aria-hidden="true" class="icon small"><use href="#arrow"/></svg></span>
+
+      </div>
+    </section>
+    <div class="platform-strip wrap"><p>One host. Plenty of possibilities.</p><div><span><svg aria-hidden="true" class="icon"><use href="#windows"/></svg> Windows</span><span><svg aria-hidden="true" class="icon"><use href="#linux"/></svg> Linux</span><span><svg aria-hidden="true" class="icon"><use href="#apple"/></svg> macOS</span></div><a href="https://github.com/LizardByte/Sunshine" data-repo-path=""><svg aria-hidden="true" class="icon small"><use href="#github"/></svg> Open source, always <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></a></div>
+    <section class="benefits wrap section-space" id="why" aria-labelledby="benefits-title">
+      <div class="section-intro"><p class="eyebrow">BUILT FOR THE WAY YOU PLAY</p><h2 id="benefits-title">Your setup.<br>A little less<br><em>tied down.</em></h2><p>The games, the desktop, the hardware you already have. Sunshine gives them another place to go.</p><a class="text-link" href="https://github.com/LizardByte/Sunshine" data-repo-path="">Explore the project <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></a></div>
+      <div class="benefit-list">
+        <article><div class="feature-icon"><svg aria-hidden="true" class="icon"><use href="#chip"/></svg></div><div><span class="feature-number">01 / PUT YOUR GPU TO WORK</span><h3>Good hardware. Great company.</h3><p>Use AMD, Intel, or NVIDIA hardware encoding to stream with low latency. Software encoding is there when you need it, too.</p><div class="hardware-names"><span>AMD</span><span>intel</span><span>NVIDIA</span></div><a class="subtle-link" href="https://docs.lizardbyte.dev/projects/sunshine/latest/">Check hardware and platform support <span aria-hidden="true">↗</span></a></div></article>
+        <article><div class="feature-icon"><svg aria-hidden="true" class="icon"><use href="#controller"/></svg></div><div><span class="feature-number">02 / KEEP YOUR FAVORITES</span><h3>Your controller. Your comfort zone.</h3><p>Sunshine supports Xbox, PlayStation, and Nintendo controller emulation. Bring your preferred controls to your Moonlight client.</p></div></article>
+        <article><div class="feature-icon"><svg aria-hidden="true" class="icon"><use href="#sliders"/></svg></div><div><span class="feature-number">03 / MAKE IT YOURS</span><h3>A host you actually control.</h3><p>Choose your applications, adjust your streaming settings, and pair your devices through Sunshine’s browser-based interface. It runs on your hardware.</p></div></article>
+      </div>
+    </section>
+    <section class="setup wrap" id="how-it-works" aria-labelledby="setup-title">
+      <div class="setup-copy"><p class="eyebrow">A LITTLE SETUP. A LOT OF FREEDOM.</p><h2 id="setup-title">Two apps.<br>One great connection.</h2><ol class="setup-steps"><li><span>1</span><div><h3>Sunshine on your PC.</h3><p>Install the host on the computer that runs your games.</p></div></li><li><span>2</span><div><h3>Moonlight on your screen.</h3><p>Install a client on your laptop, phone, TV, or handheld.</p></div></li><li><span>3</span><div><h3>Pair up. Settle in.</h3><p>Pair your client with Sunshine, choose an application, and start streaming.</p></div></li></ol><a class="button light" href="https://docs.lizardbyte.dev/projects/sunshine/latest/">Follow the setup guide <svg aria-hidden="true" class="icon"><use href="#arrow"/></svg></a></div>
+      <div class="setup-visual"><div class="browser-frame"><div class="browser-toolbar"><span class="browser-dots" aria-hidden="true">● ● ●</span><span>Sunshine web interface</span><svg aria-hidden="true" class="icon small"><use href="#sliders"/></svg></div><img src="./assets/sunshine-web-ui.png" width="1600" height="900" alt="Sunshine’s browser-based welcome screen for creating host credentials, with resources and license information" loading="lazy"></div><p>Create your web interface account to get started.</p></div>
+    </section>
+    <section class="clients wrap section-space" id="clients" aria-labelledby="clients-title">
+      <div class="section-heading"><div><p class="eyebrow">SUNSHINE HOSTS. MOONLIGHT PLAYS.</p><h2 id="clients-title">Find your next screen.</h2></div><p>From a desktop to the sofa. Choose a Moonlight client for the device you want to play on.</p></div>
+      <div class="client-grid" id="featured-clients">
+        <a class="client-card" href="https://github.com/moonlight-stream/moonlight-qt/releases/latest"><svg aria-hidden="true" class="icon"><use href="#desktop"/></svg><span class="client-label">AT YOUR DESK. OR NOT.</span><h3>Desktop &amp; laptop</h3><p>Moonlight PC for Windows, macOS, and Linux.</p><span class="card-link">Get Moonlight PC <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></span></a>
+        <a class="client-card" href="https://play.google.com/store/apps/details?id=com.limelight"><svg aria-hidden="true" class="icon"><use href="#phone"/></svg><span class="client-label">TAKE THE SMALL SCREEN.</span><h3>Android</h3><p>Moonlight for Android phones, tablets, and TVs.</p><span class="card-link">Get Moonlight for Android <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></span></a>
+        <a class="client-card" href="https://apps.apple.com/app/moonlight-game-streaming/id1000551566"><svg aria-hidden="true" class="icon"><use href="#apple"/></svg><span class="client-label">YOUR APPLE SCREENS.</span><h3>iPhone, iPad &amp; Apple TV</h3><p>Moonlight iOS/tvOS brings your PC to your Apple devices.</p><span class="card-link">Get Moonlight iOS/tvOS <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></span></a>
+      </div>
+      <details class="more-clients" id="more-clients"><summary>More screens, more possibilities <span aria-hidden="true">+</span></summary><p class="more-clients-intro">Explore community ports and other clients. Platform support and installation requirements vary by project.</p><ul id="client-catalog"><li><a href="https://moonlight-stream.org/">Explore Moonlight clients <span aria-hidden="true">↗</span></a></li><li><a href="https://app.lizardbyte.dev/app-directory/">Browse the LizardByte app directory <span aria-hidden="true">↗</span></a></li></ul></details>
+      <p class="catalog-note">Client listings are maintained in the <a href="https://github.com/LizardByte/app-directory">LizardByte app directory</a>. Moonlight is a separate open-source project.</p>
+    </section>
+    <section class="download-section" id="download" aria-labelledby="download-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">READY WHEN YOU ARE</p><h2 id="download-title">Give your PC<br>some room to play.</h2></div><p>Install Sunshine on your host computer.<br>Then bring a Moonlight client along for the ride.</p></div>
+      <div class="download-grid">
+        <article class="download-card"><svg aria-hidden="true" class="icon platform-icon"><use href="#windows"/></svg><h3>Windows</h3><p>Install Sunshine on your Windows host.</p><a class="button primary" href="https://github.com/LizardByte/Sunshine/releases/latest" data-repo-path="/releases/latest">Get Windows builds <svg aria-hidden="true" class="icon small"><use href="#arrow"/></svg></a></article>
+        <article class="download-card"><svg aria-hidden="true" class="icon platform-icon"><use href="#linux"/></svg><h3>Linux</h3><p>Find a package for your distribution.</p><a class="button primary" href="https://github.com/LizardByte/Sunshine/releases/latest" data-repo-path="/releases/latest">Get Linux builds <svg aria-hidden="true" class="icon small"><use href="#arrow"/></svg></a></article>
+        <article class="download-card"><svg aria-hidden="true" class="icon platform-icon"><use href="#apple"/></svg><h3>macOS</h3><p>Install through the LizardByte Homebrew tap.</p><a class="button primary" href="https://github.com/LizardByte/homebrew-homebrew">Get Homebrew instructions <svg aria-hidden="true" class="icon small"><use href="#arrow"/></svg></a></article>
+      </div>
+      <div class="release-row"><a class="stable-release" href="https://github.com/LizardByte/Sunshine/releases/latest" data-repo-path="/releases/latest"><span class="connection-dot"></span><span id="release-label">Latest stable release</span> <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></a><a href="https://github.com/LizardByte/Sunshine/releases" data-repo-path="/releases">Pre-releases &amp; all downloads <span aria-hidden="true">↗</span></a></div>
+      <div class="package-links"><span>More ways to install</span><a href="https://flathub.org/apps/dev.lizardbyte.app.Sunshine">Flathub ↗</a><a href="https://hub.docker.com/r/lizardbyte/sunshine">Docker ↗</a><a href="https://cloudsmith.io/~lizardbyte/repos/">Cloudsmith ↗</a><a href="https://copr.fedorainfracloud.org/coprs/lizardbyte/">Copr ↗</a><a href="https://github.com/LizardByte/pacman-repo">Arch Linux ↗</a></div>
+      <p class="download-note">Hardware and operating-system requirements vary. <a href="https://docs.lizardbyte.dev/projects/sunshine/latest/">Check the documentation</a> before installing.</p>
+    </div></section>
+    <section class="questions wrap section-space" aria-labelledby="questions-title"><div><p class="eyebrow">A FEW GOOD QUESTIONS</p><h2 id="questions-title">Before you<br>press play.</h2><p>Need a hand?<br><a class="text-link" href="https://app.lizardbyte.dev/support/">Visit the support center <svg aria-hidden="true" class="icon small"><use href="#arrow"/></svg></a></p></div><div class="faq-list">
+      <details><summary>What’s the difference between Sunshine and Moonlight?<span aria-hidden="true">+</span></summary><p>Sunshine is the host: it runs on the PC with your games and applications. Moonlight is the client: it runs on the device you stream to. You use both, pairing the client with your Sunshine host.</p></details>
+      <details><summary>Do I need an NVIDIA graphics card?<span aria-hidden="true">+</span></summary><p>No. Sunshine supports hardware encoding with AMD, Intel, and NVIDIA GPUs, as well as software encoding. Support depends on your hardware and host operating system; consult the documentation for the details.</p></details>
+      <details><summary>Is this a cloud gaming subscription?<span aria-hidden="true">+</span></summary><p>No. Sunshine is free, open-source software that runs on your own hardware. You provide the host computer and the games or applications you want to stream.</p></details>
+      <details><summary>Can I stream outside my home network?<span aria-hidden="true">+</span></summary><p>Start by pairing your devices on the same network. Streaming over the internet needs additional network configuration. Follow the official documentation to configure your setup.</p></details>
+    </div></section>
+  </main>
+  <footer class="site-footer wrap"><div class="footer-top"><a class="brand" href="#"><img src="./assets/sunshine.svg" width="38" height="38" alt=""><span>sunshine<span class="brand-period">.</span></span></a><p>A little Sunshine. A lot of possibilities.</p><a href="https://github.com/LizardByte/Sunshine" data-repo-path="">View on GitHub <svg aria-hidden="true" class="icon small"><use href="#external"/></svg></a></div><div class="footer-bottom"><p class="umbrella">A <a href="https://app.lizardbyte.dev/" aria-label="LizardByte home"><img src="./assets/lizardbyte.svg" width="126" height="30" alt="LizardByte"></a> project</p><nav aria-label="Footer navigation"><a href="https://app.lizardbyte.dev/">Explore projects</a><a href="https://app.lizardbyte.dev/support/">Get support</a><a href="https://github.com/sponsors/LizardByte">Support development</a><a href="https://app.lizardbyte.dev/privacy/">Privacy</a><a href="https://app.lizardbyte.dev/terms/">Terms</a><a href="https://github.com/SunshineStream/SunshineStream.github.io">Website source</a></nav><p class="copyright">© <span id="year">2026</span> LizardByte</p></div></footer>
+</body>
+</html>
