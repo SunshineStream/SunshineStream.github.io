@@ -18,6 +18,12 @@ and populate additional clients from the shared
 [app-directory catalog](https://app.lizardbyte.dev/app-directory/sunshine.json). Catalog tools are excluded from the
 client list. An API failure preserves the static fallback links.
 
+The download section covers Windows, Linux, macOS DMGs, and FreeBSD. Homebrew is an alternative macOS installation
+method. Donations link to LizardByte's GitHub Sponsors, PayPal, and Patreon funding options.
+
+The color theme follows the device preference until the visitor uses the header switcher. An explicit light/dark
+choice is stored locally; the control still works for the current page when browser storage is unavailable.
+
 Sunshine's existing repository and product page stay in place until the repository migration. Its old GitHub URLs
 continue to provide fallback redirects after transfer; the optional ownership lookup uses the stable repository ID.
 
@@ -26,5 +32,5 @@ custom domain. Their published paths use the repository name.
 
 ## Assets and licensing
 
-See [ASSETS.md](ASSETS.md) for image and font sources. The website is licensed under GPL-3.0-only; existing branding
-and font attribution remain applicable.
+The original website code and illustration are licensed under [AGPL-3.0-only](LICENSE). Source is available through
+the website footer. See [ASSETS.md](ASSETS.md) for the existing image and font licenses and attributions.

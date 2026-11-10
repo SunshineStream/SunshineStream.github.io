@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
-import { httpsUrl, loadRepository, clientLinks, enhanceRepository, enhanceClients } from '../assets/site.js';
+import vm from 'node:vm';
+import { httpsUrl, loadRepository, clientLinks, enhanceRepository, enhanceClients, setupTheme } from '../assets/site.js';
 
 const ok = body => ({ ok: true, json: async () => body });
 
@@ -90,4 +91,75 @@ test('page anchors and local assets resolve and essential actions are static lin
   assert.match(html, /href="https:\/\/github.com\/LizardByte\/Sunshine\/releases\/latest"/);
   assert.match(html, /https:\/\/docs.lizardbyte.dev\/projects\/sunshine\/latest\//);
   assert.match(html, /aria-controls="navigation"/);
+});
+
+function themeFixture(dark = false, preference) {
+  const button = new EventTarget();
+  const attributes = {};
+  button.setAttribute = (name, value) => { attributes[name] = value; };
+  button.hidden = true;
+  const media = new EventTarget();
+  media.matches = dark;
+  const dataset = preference ? { theme: preference } : {};
+  const doc = {
+    documentElement: { dataset },
+    querySelector: selector => selector === '.theme-toggle' ? button : null,
+    getElementById: () => null
+  };
+  return { button, attributes, media, doc, dataset };
+}
+
+test('the theme follows device changes until a manual choice overrides them and persists', () => {
+  const fixture = themeFixture();
+  const writes = [];
+  setupTheme(fixture.doc, { setItem: (...args) => writes.push(args) }, fixture.media);
+  assert.equal(fixture.button.hidden, false);
+  assert.equal(fixture.attributes['aria-label'], 'Switch to dark mode');
+  fixture.media.matches = true;
+  fixture.media.dispatchEvent(new Event('change'));
+  assert.equal(fixture.attributes['aria-label'], 'Switch to light mode');
+  assert.equal(fixture.dataset.theme, undefined);
+  fixture.button.dispatchEvent(new Event('click'));
+  assert.equal(fixture.dataset.theme, 'light');
+  assert.deepEqual(writes, [['sunshine-theme', 'light']]);
+  fixture.media.dispatchEvent(new Event('change'));
+  assert.equal(fixture.attributes['aria-label'], 'Switch to dark mode');
+});
+
+test('manual theme changes work when browser storage is blocked', () => {
+  const fixture = themeFixture(false, 'dark');
+  setupTheme(fixture.doc, { setItem() { throw new Error('Storage blocked'); } }, fixture.media);
+  assert.equal(fixture.attributes['aria-label'], 'Switch to light mode');
+  fixture.button.dispatchEvent(new Event('click'));
+  assert.equal(fixture.dataset.theme, 'light');
+  fixture.button.dispatchEvent(new Event('click'));
+  assert.equal(fixture.dataset.theme, 'dark');
+});
+
+test('the early theme bootstrap restores only valid saved choices and tolerates blocked storage', async () => {
+  const source = await readFile(new URL('../assets/theme-init.js', import.meta.url), 'utf8');
+  for (const value of ['dark', 'light', 'unexpected', null]) {
+    const sandbox = { localStorage: { getItem: () => value }, document: { documentElement: { dataset: {} } } };
+    vm.runInNewContext(source, sandbox);
+    assert.equal(sandbox.document.documentElement.dataset.theme,
+      ['light', 'dark'].includes(value) ? value : undefined);
+  }
+  const blocked = { localStorage: { getItem() { throw new Error('Storage blocked'); } },
+    document: { documentElement: { dataset: {} } } };
+  assert.doesNotThrow(() => vm.runInNewContext(source, blocked));
+});
+
+test('DMGs are the primary macOS action, FreeBSD has a download, and funding links are visible', async () => {
+  const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+  const cards = [...html.matchAll(/<article class="download-card">([\s\S]*?)<\/article>/g)].map(match => match[1]);
+  assert.equal(cards.length, 4);
+  const mac = cards.find(card => card.includes('<h3>macOS</h3>'));
+  assert.match(mac, /class="button primary"[^>]+releases\/latest[^>]*>Get macOS DMGs/);
+  assert.match(mac, /class="download-alternative"[^>]+homebrew-homebrew[^>]*>Homebrew \(alternative\)/);
+  assert.ok(cards.some(card => card.includes('<h3>FreeBSD</h3>') && card.includes('Get FreeBSD packages')));
+  assert.match(html, /href="#donate">Donate/);
+  assert.match(html, /href="https:\/\/github.com\/sponsors\/LizardByte"/);
+  assert.match(html, /href="https:\/\/paypal.me\/ReenigneArcher"/);
+  assert.match(html, /href="https:\/\/www.patreon.com\/LizardByte"/);
+  assert.ok(html.indexOf('theme-init.js') < html.indexOf('style.css'));
 });
