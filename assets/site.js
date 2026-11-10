@@ -132,7 +132,7 @@ export function setupTheme(doc = document, storage, media = globalThis.matchMedi
     button.setAttribute('aria-label', label);
     button.setAttribute('title', label);
     doc.getElementById('theme-icon')?.setAttribute('href', dark ? '#sun' : '#moon');
-    doc.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#131d1a' : '#f7f6f0');
+    doc.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#181817' : '#f7f6f0');
   }
   button.addEventListener('click', () => {
     const theme = effectiveTheme() === 'dark' ? 'light' : 'dark';

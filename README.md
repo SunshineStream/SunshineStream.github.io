@@ -19,7 +19,8 @@ and populate additional clients from the shared
 client list. An API failure preserves the static fallback links.
 
 The download section covers Windows, Linux, macOS DMGs, and FreeBSD. Homebrew is an alternative macOS installation
-method. Donations link to LizardByte's GitHub Sponsors, PayPal, and Patreon funding options.
+method. The support section recommends buying a libvirtualhid license and also links to LizardByte's GitHub
+Sponsors, PayPal, and Patreon funding options.
 
 The color theme follows the device preference until the visitor uses the header switcher. An explicit light/dark
 choice is stored locally; the control still works for the current page when browser storage is unavailable.

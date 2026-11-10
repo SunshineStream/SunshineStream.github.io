@@ -158,6 +158,10 @@ test('DMGs are the primary macOS action, FreeBSD has a download, and funding lin
   assert.match(mac, /class="download-alternative"[^>]+homebrew-homebrew[^>]*>Homebrew \(alternative\)/);
   assert.ok(cards.some(card => card.includes('<h3>FreeBSD</h3>') && card.includes('Get FreeBSD packages')));
   assert.match(html, /href="#donate">Donate/);
+  const support = html.match(/<section class="donate wrap"[\s\S]*?<\/section>/)[0];
+  assert.match(support, /Buying a libvirtualhid license is the best way to support Sunshine/);
+  assert.match(support, /Donations are welcome, too/);
+  assert.match(support, /class="button primary" href="https:\/\/buy.polar.sh\/[^"]+">Buy a libvirtualhid license/);
   assert.match(html, /href="https:\/\/github.com\/sponsors\/LizardByte"/);
   assert.match(html, /href="https:\/\/paypal.me\/ReenigneArcher"/);
   assert.match(html, /href="https:\/\/www.patreon.com\/LizardByte"/);
