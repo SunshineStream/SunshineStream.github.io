@@ -101,12 +101,14 @@ function themeFixture(dark = false, preference) {
   const media = new EventTarget();
   media.matches = dark;
   const dataset = preference ? { theme: preference } : {};
+  const screenshot = {};
+  const source = { setAttribute: (name, value) => { screenshot[name] = value; } };
   const doc = {
     documentElement: { dataset },
     querySelector: selector => selector === '.theme-toggle' ? button : null,
-    getElementById: () => null
+    getElementById: id => id === 'sunshine-screenshot-dark' ? source : null
   };
-  return { button, attributes, media, doc, dataset };
+  return { button, attributes, media, doc, dataset, screenshot };
 }
 
 test('the theme follows device changes until a manual choice overrides them and persists', () => {
@@ -115,25 +117,41 @@ test('the theme follows device changes until a manual choice overrides them and 
   setupTheme(fixture.doc, { setItem: (...args) => writes.push(args) }, fixture.media);
   assert.equal(fixture.button.hidden, false);
   assert.equal(fixture.attributes['aria-label'], 'Switch to dark mode');
+  assert.equal(fixture.screenshot.media, 'not all');
   fixture.media.matches = true;
   fixture.media.dispatchEvent(new Event('change'));
   assert.equal(fixture.attributes['aria-label'], 'Switch to light mode');
+  assert.equal(fixture.screenshot.media, 'all');
   assert.equal(fixture.dataset.theme, undefined);
   fixture.button.dispatchEvent(new Event('click'));
   assert.equal(fixture.dataset.theme, 'light');
   assert.deepEqual(writes, [['sunshine-theme', 'light']]);
   fixture.media.dispatchEvent(new Event('change'));
   assert.equal(fixture.attributes['aria-label'], 'Switch to dark mode');
+  assert.equal(fixture.screenshot.media, 'not all');
 });
 
 test('manual theme changes work when browser storage is blocked', () => {
   const fixture = themeFixture(false, 'dark');
   setupTheme(fixture.doc, { setItem() { throw new Error('Storage blocked'); } }, fixture.media);
   assert.equal(fixture.attributes['aria-label'], 'Switch to light mode');
+  assert.equal(fixture.screenshot.media, 'all');
   fixture.button.dispatchEvent(new Event('click'));
   assert.equal(fixture.dataset.theme, 'light');
+  assert.equal(fixture.screenshot.media, 'not all');
   fixture.button.dispatchEvent(new Event('click'));
   assert.equal(fixture.dataset.theme, 'dark');
+  assert.equal(fixture.screenshot.media, 'all');
+});
+
+test('the current interface has both theme captures and a system-theme fallback without JavaScript', async () => {
+  const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+  const picture = html.match(/<picture>([\s\S]*?)<\/picture>/)[1];
+  assert.match(picture, /srcset="\.\/assets\/sunshine-web-ui-dark.jpg" media="\(prefers-color-scheme: dark\)"/);
+  assert.match(picture, /<img src="\.\/assets\/sunshine-web-ui-light.jpg" width="1264" height="802"/);
+  for (const theme of ['light', 'dark']) {
+    await access(new URL(`../assets/sunshine-web-ui-${theme}.jpg`, import.meta.url));
+  }
 });
 
 test('the early theme bootstrap restores only valid saved choices and tolerates blocked storage', async () => {

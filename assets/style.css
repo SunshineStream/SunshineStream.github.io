@@ -136,7 +136,8 @@ h2 em { font-style: normal; color: var(--orange); }
 .browser-frame { background: #eae7dd; padding: 7px; border-radius: 12px; transform: rotate(2deg); box-shadow: 10px 20px 35px #1717154d; }
 .browser-toolbar { padding: 10px 8px 16px; color: #656255; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 9px; }
 .browser-dots { color: #948d7d; font-size: 7px; }
-.browser-frame > img { width: 100%; height: auto; border-radius: 5px; }
+.browser-frame picture { display: block; }
+.browser-frame picture img { width: 100%; height: auto; border-radius: 5px; }
 .setup-visual > p { color: #cbc8bb; font-size: 10px; text-align: center; line-height: 1.8; margin-top: 28px; }
 .section-heading { display: flex; align-items: end; gap: 50px; justify-content: space-between; margin-bottom: 42px; }
 .section-heading .eyebrow { margin-bottom: 19px; }

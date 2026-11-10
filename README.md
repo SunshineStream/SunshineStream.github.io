@@ -26,6 +26,8 @@ Sponsors, PayPal, and Patreon funding options.
 
 The color theme follows the device preference until the visitor uses the header switcher. An explicit light/dark
 choice is stored locally; the control still works for the current page when browser storage is unavailable.
+The welcome-screen screenshot follows the same theme, using separate captures from Sunshine's current interface.
+Without JavaScript, the browser selects the screenshot from the device's preferred color scheme.
 
 Sunshine's existing repository and product page stay in place until the repository migration. Its old GitHub URLs
 continue to provide fallback redirects after transfer; the optional ownership lookup uses the stable repository ID.
