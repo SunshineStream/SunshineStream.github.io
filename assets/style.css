@@ -71,7 +71,6 @@ h1 > span { color: var(--orange); white-space: nowrap; }
 .scene-coordinate { position: absolute; color: #5c695f; font-size: 8px; letter-spacing: .15em; font-weight: 700; }
 .coordinate-top { top: 25px; left: 28px; }
 .coordinate-bottom { bottom: 24px; left: 28px; display: flex; align-items: center; gap: 12px; }
-.scene-caption { position: absolute; bottom: 49px; right: 24px; font-size: 9px; color: #5c695f; }
 .monitor { position: absolute; width: 83%; top: 76px; left: 9%; }
 .monitor-screen { padding: 10px 10px 15px; border-radius: 13px; background: #253b3d; box-shadow: 0 26px 35px -22px #263f3d80; position: relative; }
 .monitor-screen > img { width: 100%; aspect-ratio: 1.62; border-radius: 5px; object-fit: cover; }
@@ -201,7 +200,6 @@ details[open] > summary > span { transform: rotate(45deg); }
   .monitor { top: 83px; }
   .handheld { width: 79%; height: 140px; left: 4%; bottom: 72px; }
   .connection-tag { top: 56%; right: 12px; font-size: 8px; }
-  .scene-caption { font-size: 8px; }
   .benefits { gap: 50px; }
   .setup { padding: 45px 35px; gap: 35px; }
   .setup h2 { font-size: 34px; }
@@ -287,7 +285,6 @@ details[open] > summary > span { transform: rotate(45deg); }
   .connection-tag { top: 58%; right: 10px; font-size: 8px; padding: 9px; }
   .coordinate-bottom { font-size: 7px; left: 18px; }
   .coordinate-top { left: 18px; }
-  .scene-caption { font-size: 8px; right: 16px; bottom: 49px; }
   .platform-strip > div { gap: 22px; }
   .platform-strip > a { margin-left: 0; }
   .setup { padding: 35px 23px; }
