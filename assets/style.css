@@ -90,7 +90,7 @@ h1 > span { color: var(--orange); white-space: nowrap; }
 .monitor { position: absolute; width: 83%; top: 76px; left: 9%; }
 .monitor-screen { padding: 10px 10px 15px; border-radius: 13px; background: #343431; box-shadow: 0 26px 35px -22px #17171580; position: relative; }
 .monitor-screen > img { width: 100%; aspect-ratio: 1.62; border-radius: 5px; object-fit: cover; }
-.screen-mark { position: absolute; bottom: 30px; left: 24px; display: flex; align-items: center; gap: 6px; font-size: 8px; color: #fff8e9; padding: 5px 8px; background: #242421d9; border: 1px solid #ffffff22; border-radius: 5px; }
+.screen-mark { position: absolute; top: 24px; left: 24px; display: flex; align-items: center; gap: 6px; font-size: 8px; color: #fff8e9; padding: 5px 8px; background: #242421d9; border: 1px solid #ffffff22; border-radius: 5px; }
 .monitor-neck { width: 44px; height: 48px; margin: 0 auto; background: #62625a; clip-path: polygon(17% 0, 83% 0, 100% 100%, 0 100%); }
 .monitor-foot { width: 150px; height: 8px; border-radius: 20px 20px 3px 3px; margin: 0 auto; background: #3d3d38; }
 .handheld { display: flex; position: absolute; width: 66%; height: 150px; left: 5%; bottom: 74px; background: #f7f4e9; border: 1px solid #dfdacb; border-radius: 33px; padding: 10px 7px; transform: rotate(-9deg); box-shadow: 5px 18px 35px -9px #1b2c3c40, inset 0 0 0 3px #ffffff80; }
