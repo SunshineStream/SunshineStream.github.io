@@ -185,7 +185,6 @@ details[open] > summary > span { transform: rotate(45deg); }
 .donation-heart { width: 30px; height: 30px; margin-bottom: 8px; color: var(--orange); justify-self: center; }
 .donation-secondary { border: 1px solid var(--ink); }
 .donation-secondary:hover { background: var(--surface); }
-.donation-options .text-link { justify-content: center; }
 .questions { display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; }
 .questions .eyebrow { margin-bottom: 20px; }
 .questions h2 { font-size: 43px; }

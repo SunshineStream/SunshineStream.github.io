@@ -162,8 +162,10 @@ test('DMGs are the primary macOS action, FreeBSD has a download, and funding lin
   assert.match(html, /href="#donate">Donate/);
   const support = html.match(/<section class="donate wrap"[\s\S]*?<\/section>/)[0];
   assert.match(support, /Buying a libvirtualhid license is the best way to support Sunshine/);
+  assert.match(support, /unlocks full controller support on Windows and macOS/);
   assert.match(support, /Donations are welcome, too/);
   assert.match(support, /class="button primary" href="https:\/\/buy.polar.sh\/[^"]+">Buy a libvirtualhid license/);
+  assert.equal([...support.matchAll(/class="button donation-secondary"/g)].length, 3);
   assert.match(html, /href="https:\/\/github.com\/sponsors\/LizardByte"/);
   assert.match(html, /href="https:\/\/paypal.me\/ReenigneArcher"/);
   assert.match(html, /href="https:\/\/www.patreon.com\/LizardByte"/);
