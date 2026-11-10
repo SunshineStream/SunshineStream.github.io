@@ -11,6 +11,8 @@ build step or runtime dependencies. Keep `.nojekyll` and `CNAME` at the reposito
 
 Serve the repository with a local static web server, for example `python -m http.server 8000`, then visit
 `http://localhost:8000/`. Run the regression checks with `npm test` (Node.js 24 or newer).
+When updating the stylesheet or main script, refresh its `?v=` value in `index.html` using the first 12 characters
+of the file's SHA-256 hash so browsers receive the updated asset immediately after deployment.
 
 The core downloads, documentation links, and featured Moonlight clients work without JavaScript. Optional enhancements
 load the current Sunshine repository owner using GitHub repository ID `438803890`, display its latest stable release,
