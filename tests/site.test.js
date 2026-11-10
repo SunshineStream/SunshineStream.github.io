@@ -88,7 +88,7 @@ test('page anchors and local assets resolve and essential actions are static lin
     await access(fileURLToPath(new URL('../' + match[1], import.meta.url)));
   }
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
-  assert.match(html, /href="https:\/\/github.com\/LizardByte\/Sunshine\/releases\/latest"/);
+  assert.match(html, /href="https:\/\/github.com\/SunshineStream\/Sunshine\/releases\/latest"/);
   assert.match(html, /https:\/\/docs.lizardbyte.dev\/projects\/sunshine\/latest\//);
   assert.match(html, /aria-controls="navigation"/);
 });

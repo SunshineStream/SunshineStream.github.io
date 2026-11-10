@@ -1,12 +1,12 @@
 # Asset sources
 
 - `assets/sunshine.svg` and `assets/social.jpg` come from
-  [LizardByte/Sunshine](https://github.com/LizardByte/Sunshine), at `sunshine.svg`
+  [SunshineStream/Sunshine](https://github.com/SunshineStream/Sunshine), at `sunshine.svg`
   and `branding/github/banner.jpg`.
   These assets retain their original GPL-3.0 licensing; a copy is included at `LICENSES/GPL-3.0.txt`.
 - `assets/sunshine-web-ui-light.jpg` and `assets/sunshine-web-ui-dark.jpg` are captures of the welcome screen
   built from Sunshine at
-  [a5265bc](https://github.com/LizardByte/Sunshine/tree/a5265bc4abddc8915773cfa6bceaf6f2ca660608/src_assets/common/assets/web).
+  [a5265bc](https://github.com/SunshineStream/Sunshine/tree/a5265bc4abddc8915773cfa6bceaf6f2ca660608/src_assets/common/assets/web).
   They use Sunshine's default Light and Dark themes and retain its GPL-3.0 licensing.
   The hero's device-and-canyon composition is a separate illustration.
 - `assets/lizardbyte.svg` comes from

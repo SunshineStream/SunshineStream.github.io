@@ -29,8 +29,9 @@ choice is stored locally; the control still works for the current page when brow
 The welcome-screen screenshot follows the same theme, using separate captures from Sunshine's current interface.
 Without JavaScript, the browser selects the screenshot from the device's preferred color scheme.
 
-Sunshine's existing repository and product page stay in place until the repository migration. Its old GitHub URLs
-continue to provide fallback redirects after transfer; the optional ownership lookup uses the stable repository ID.
+Sunshine is hosted at [SunshineStream/Sunshine](https://github.com/SunshineStream/Sunshine). Its old GitHub URLs
+redirect to the new owner; the optional ownership lookup uses the stable repository ID. This repository publishes
+the product page independently of Sunshine's source repository.
 
 Repository Pages sites in SunshineStream inherit this organization's Pages hostname when they do not set their own
 custom domain. Their published paths use the repository name.
